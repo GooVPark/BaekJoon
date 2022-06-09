@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BaekJoon._03단계
+namespace BaekJoon._06단계
 {
-    internal class Main3_04
+    internal class Main6_04
     {
         static void Main4(string[] args)
         {
@@ -15,11 +15,14 @@ namespace BaekJoon._03단계
 
             for(int i = 0; i < count; i++)
             {
-                string[] nums = Console.ReadLine().Split();
-                int num1 = int.Parse(nums[0]);
-                int num2 = int.Parse(nums[1]);
+                string[] str = Console.ReadLine().Split();
+                int repeat = int.Parse(str[0]);
 
-                sb.Append(num1 + num2 + "\n");
+                for(int j = 0; j < str[1].Length; j++)
+                {
+                    for(int k = 0; k < repeat; k++) sb.Append(str[1][j]);
+                }
+                sb.Append("\n");
             }
 
             Console.WriteLine(sb.ToString());
