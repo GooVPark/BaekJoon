@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\1302\\Desktop\\BaekJoon\\BaekJoon\\BaekJoon.csproj",
+      "projectUniqueName": "C:\\Users\\1302\\Desktop\\새 폴더\\BaekJoon\\BaekJoon\\BaekJoon.csproj",
       "projectName": "BaekJoon",
-      "projectPath": "C:\\Users\\1302\\Desktop\\BaekJoon\\BaekJoon\\BaekJoon.csproj",
+      "projectPath": "C:\\Users\\1302\\Desktop\\새 폴더\\BaekJoon\\BaekJoon\\BaekJoon.csproj",
       "packagesPath": "C:\\Users\\1302\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\1302\\Desktop\\BaekJoon\\BaekJoon\\obj\\",
+      "outputPath": "C:\\Users\\1302\\Desktop\\새 폴더\\BaekJoon\\BaekJoon\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\1302\\AppData\\Roaming\\NuGet\\NuGet.Config",

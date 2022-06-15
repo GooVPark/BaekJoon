@@ -9,15 +9,16 @@ namespace BaekJoon.Sub
 {
     internal class TestCaseBuilder
     {
-        static void MainT(string[] args)
+        static void Maint(string[] args)
         {
             string path = @"C:\Users\1302\Desktop\TestCase.txt";
             StringBuilder sb = new StringBuilder();
             Random random = new Random();
 
-            for (int i = 0; i < 10000000; i++)
+            sb.Append("1000000\n");
+            for (int i = 0; i < 1000000; i++)
             {
-                sb.Append(random.Next(1, 10000) + "\n");
+                sb.Append(random.Next(-1000000000, 1000000000) + " ");
             }
 
             if (!File.Exists(path))
