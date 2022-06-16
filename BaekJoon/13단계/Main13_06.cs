@@ -8,7 +8,7 @@ namespace BaekJoon._13단계
 {
     internal class Main13_06
     {
-        static void Main(string[] args)
+        static void Main6(string[] args)
         {
             StreamReader sr = new StreamReader(Console.OpenStandardInput());
             StringBuilder sb = new StringBuilder();
