@@ -8,26 +8,34 @@ namespace BaekJoon._16단계
 {
     internal class Main16_03
     {
-        static int count = 0;
-        static void Main(string[] args)
+        static long[] DP;
+        static void Main3(string[] args)
         {
             int N = int.Parse(Console.ReadLine());
 
-            DFS(N, 0, 0);
-
-            Console.WriteLine(count);
-        }
-
-        static void DFS(int N, int n0, int n1)
-        {
-            if(N == n0 + n1)
+            if (N == 0) 
             {
-                count++;
+                Console.WriteLine(1);
+                return; 
             }
-            if (N < n0 + n1) return;
+            if (N == 1)
+            {
+                Console.WriteLine(1);
+                return;
+            }
+            if (N == 2)
+            {
+                Console.WriteLine(2);
+                return;
+            }
 
-            DFS(N, n0 + 2, n1); 
-            DFS(N, n0, n1 + 1);
-        }
+            DP = new long[N + 1];
+            DP[1] = 1;
+            DP[2] = 2;
+
+            for (int i = 3; i <= N; i++) DP[i] =( DP[i - 1] + DP[i - 2]) % 15746;
+
+            Console.WriteLine(DP[N]);
+        }   
     }
 }

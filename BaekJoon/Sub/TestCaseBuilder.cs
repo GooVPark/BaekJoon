@@ -16,9 +16,9 @@ namespace BaekJoon.Sub
             Random random = new Random();
 
             sb.Append("1000000\n");
-            for (int i = 0; i < 1000000; i++)
+            for (int i = 0; i < 100000; i++)
             {
-                sb.Append(random.Next(-1000000000, 1000000000) + " ");
+                sb.Append(random.Next(-1000, 1000) + " ");
             }
 
             if (!File.Exists(path))
