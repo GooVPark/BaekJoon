@@ -8,39 +8,47 @@ namespace BaekJoon._16단계
 {
     internal class Main16_07
     {
-        static void Main(string[] args)
+        static void Main7(string[] args)
         {
             StreamReader sr = new StreamReader(Console.OpenStandardInput());
+            int n = int.Parse(sr.ReadLine());
 
-            int count = int.Parse(sr.ReadLine());
-            int[] nums = new int[count + 1];
-            nums[0] = int.Parse(sr.ReadLine());
-            string[] s = sr.ReadLine().Split();
-            nums[0] = int.Parse(s[0]) + nums[0];
-            nums[1] = int.Parse(s[1]) + nums[0];
-            for(int i = 1; i < count; i++)
+            int[] sum = new int[n];
+            int[] line1 = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+
+            if(n == 1)
             {
-                string[] input = sr.ReadLine().Split();
-                int[] inputs = new int[input.Length];
-                for (int j = 0; j < input.Length; j++)
-                { 
-                    inputs[j] = int.Parse(input[j]);
-                }
-                
-                for (int j = 0; j < i; j++)
+                Console.WriteLine(sum[0]);
+                return;
+            }
+
+            int[] line2 = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+            sum[0] = line1[0] + line2[0];
+            sum[1] = line1[0] + line2[1];
+
+            if(n == 2)
+            {
+                Console.WriteLine(sum[0] > sum[1] ? sum[0] : sum[1]);
+                return;
+            }
+            int[] input = new int[n];
+            for(int i = 2; i < n; i++)
+            {
+                input = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+
+                input[0] += sum[0];
+
+                for (int j = 1; j <= i; j++)
                 {
-                    
-                    
-                }
-                for (int k = 0; k < inputs.Length; k++) Console.Write(nums[k] + " ");
-                Console.WriteLine();
-            }
+                    int left = sum[j - 1];
+                    int right = sum[j];
 
-            int max = int.MinValue;
-            for(int i = 0; i < count; i++)
-            {
-                if (nums[i] > max) max = nums[i];
+                    input[j] += left > right ? left : right;
+                }
+                for (int j = 0; j <= i; j++) sum[j] = input[j];
             }
+            int max = int.MinValue;
+            for(int i = 0; i < n; i++) if(max < sum[i]) max = sum[i];
 
             Console.WriteLine(max);
         }
